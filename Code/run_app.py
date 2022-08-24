@@ -8,7 +8,7 @@ import boto3
 AWS_ID = os.environ['aws_access_key_id']
 AWS_KEY = os.environ['aws_secret_access_key']
 REGION = os.environ['region']
-INTERVAl = os.environ['INTERVAL']
+INTERVAL  = os.environ['interval']
 # AWS_ID = os.environ.get('aws_access_key_id')
 # AWS_KEY = os.environ.get('aws_secret_access_key')
 # REGION = os.environ.get('region')
@@ -19,6 +19,7 @@ print("Envoronment Variable:")
 print(AWS_ID)
 print(AWS_KEY)
 print(REGION)
+print(INTERVAL)
 print("=====================")
 
 
