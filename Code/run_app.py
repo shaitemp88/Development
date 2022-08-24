@@ -19,7 +19,7 @@ print("Envoronment Variable:")
 print(AWS_ID)
 print(AWS_KEY)
 print(REGION)
-print(INTERVAL)
+print(INTER)
 print("=====================")
 
 
