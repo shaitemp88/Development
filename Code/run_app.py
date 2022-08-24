@@ -1,8 +1,8 @@
 # Modules import
 import os
 import boto3
-
-# import uuid
+import pythonjsonlogger
+from pythonjsonlogger import jsonlogger
 
 # Project configuration settings - Environment variables
 AWS_ID = os.environ['aws_access_key_id']
