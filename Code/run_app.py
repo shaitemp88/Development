@@ -7,8 +7,7 @@ import boto3
 # Project configuration settings - Environment variables
 AWS_ID = os.environ['aws_access_key_id']
 AWS_KEY = os.environ['aws_secret_access_key']
-REGION = os.environ['region']
-INTER  = os.environ['interval']
+REGION = os.environ['INTERVAL']
 # AWS_ID = os.environ.get('aws_access_key_id')
 # AWS_KEY = os.environ.get('aws_secret_access_key')
 # REGION = os.environ.get('region')
@@ -19,7 +18,6 @@ print("Envoronment Variable:")
 print(AWS_ID)
 print(AWS_KEY)
 print(REGION)
-print(INTER)
 print("=====================")
 
 
