@@ -13,8 +13,12 @@ import boto3
 # REGION = os.environ.get('region')
 INTERN = "123"
 print(INTERN)
-INTERVAL = os.environ.get("INTERVAL")
+INTERVAL = os.environ["INTERVAL"]
 print(INTERVAL)
+
+TEST = "300"
+TEST = int(TEST)
+print(TEST)
 
 
 print("=                   =")
