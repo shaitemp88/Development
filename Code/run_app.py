@@ -6,15 +6,15 @@ import pythonjsonlogger
 from pythonjsonlogger import jsonlogger
 
 # Project configuration settings - Environment variables
-AWS_ID = os.environ['aws_access_key_id']
-AWS_KEY = os.environ['aws_secret_access_key']
+ACCESS_ID = os.environ['aws_access_key_id']
+ACCESS_KEY = os.environ['aws_secret_access_key']
 REGION = os.environ['region']
 INTERVAL = int(os.environ["INTERVAL"])
 
 print("=                   =")
 print("Envoronment Variable:")
-print(AWS_ID)
-print(AWS_KEY)
+print(ACCESS_ID)
+print(ACCESS_KEY)
 print(REGION)
 print(INTERVAL)
 print("=====================")
