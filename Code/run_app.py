@@ -1,7 +1,7 @@
 # Modules import
 import os
 import boto3
-import Time
+import time
 import pythonjsonlogger
 from pythonjsonlogger import jsonlogger
 
@@ -19,13 +19,32 @@ print(REGION)
 print(INTERVAL)
 print("=====================")
 
-while true:
+while True:
     ec2 = boto3.resource('ec2', region_name=REGION)
-    instances = ec2.instances.filter(Filters=[{'Name': 'tag:k8s.io/role/master', 'Values': ["1"]}, {'Name': 'instance-state-code', 'Values': ["16"]}])
+    #instances = ec2.instances.filter(Filters=[{'Name': 'tag:k8s.io/role/master', 'Values': ["1"]}, {'Name': 'instance-state-code', 'Values': ["16"]}])
+    #instances = ec2.instances.all()
+    instances = ec2.instances.filter(
+        Filters=[
+            {
+                'Name': 'tag:Name',
+                'Values': [
+                    "instance-state-code",
+                    "tag:k8s.io/role/master"
+                ]
+            },
+            {
+                'Name': 'instance-state-code',
+                'Values': [
+                    "16"
+                ]
+            }
+        ]
+    )
     for instance in instances:
         for tag in instance.tags:
             print(tag)
         print("instance id: ", instance.id)
+    print("Done - waiting for next interval")
     time.sleep(INTERVAL)
 
 print("===============!!!FIINSHED!!!===============")
