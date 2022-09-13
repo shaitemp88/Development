@@ -2,7 +2,7 @@
 FROM eeacms/pylint:latest as linting
 WORKDIR /code
 COPY ["./Code/*.py","./"]
-RUN /docker-entrypoint.sh pylint --disable=all
+RUN /docker-entrypoint.sh pylint --disable=all --exit-zero
 
 # Step 2 - running after linting
 FROM python:3.6-alpine as server
