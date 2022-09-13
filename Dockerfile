@@ -1,9 +1,10 @@
-# Step 1
+# Step 1 - linting code
 FROM eeacms/pylint:latest as linting
 WORKDIR /code
 COPY ["./Code/*.py","./"]
 RUN ["/docker-entrypoint.sh", "pylint"]
 
+# Step 2 - running after linting
 FROM python:3.6-alpine as server
 WORKDIR /app
 # Copy all packages instead of rerunning pip install
