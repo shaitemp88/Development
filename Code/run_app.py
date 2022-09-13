@@ -21,8 +21,7 @@ print "====================="
 
 while True:
     ec2 = boto3.resource('ec2', region_name=REGION, aws_access_key_id=ACCESS_ID, aws_secret_access_key= ACCESS_KEY)
-    #instances = ec2.instances.filter(Filters=[{'Name': 'tag:k8s.io/role/master', 'Values': ["1"]},
-                                                {'Name': 'instance-state-code', 'Values': ["16"]}])
+    #instances = ec2.instances.filter(Filters=[{'Name': 'tag:k8s.io/role/master', 'Values': ["1"]},{'Name': 'instance-state-code', 'Values': ["16"]}])
     #instances = ec2.instances.all()
     instances = ec2.instances.filter(
         Filters=[
