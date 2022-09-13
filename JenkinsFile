@@ -7,6 +7,7 @@ pipeline {
 	environment {
 	    INTERVAL = "${env.INTERVAL}"
 	    DOCKERBUILD = "development/test:${env.BUILD_NUMBER}"
+	    DOCKERRUNNAME = "run1"
 	}
     stages {
         stage ('Init') {
@@ -53,9 +54,9 @@ pipeline {
             steps{
                 script {
                     // SUCCESS_BUILD=`wget -qO- http://jenkins_url:8080/job/jobname/lastSuccessfulBuild/buildNumber`
-                    sh 'docker run --env INTERVAL=$INTERVAL --name run1 -tid $DOCKERBUILD'
+                    sh 'docker run --env INTERVAL=$INTERVAL --name $DOCKERRUNNAME -tid $DOCKERBUILD'
                     sh 'sleep 10'
-                    sh 'docker logs run1'
+                    sh 'docker logs $DOCKERRUNNAME'
                 }
             }
         }
