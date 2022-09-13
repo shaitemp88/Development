@@ -1,3 +1,4 @@
+"""Module providingFunction printing python version."""
 import os
 import time
 import boto3
