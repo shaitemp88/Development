@@ -1,9 +1,9 @@
-# Modules import
+#Modules import
 import os
 import time
 import boto3
-import pythonjsonlogger
-from pythonjsonlogger import jsonlogger
+#import pythonjsonlogger
+#from pythonjsonlogger import jsonlogger
 
 # Project configuration settings - Environment variables
 ACCESS_ID = os.environ['aws_access_key_id']
@@ -42,7 +42,7 @@ while True:
     )
     for instance in instances:
         for tag in instance.tags:
-            print(tag)
+            print tag
         print "instance id: ", instance.id
     print "Done - waiting for next interval"
     time.sleep(INTERVAL)
